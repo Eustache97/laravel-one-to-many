@@ -15,6 +15,16 @@
                         <input type="text" id="title" name="title" class="form-control"
                             value="{{ old('title', $project->title) }}">
                     </div>
+                    <div class=" form-group mb-3">
+                        <label for="type">Tipologia</label>
+                        <select id="type" class="form-select" name="type_id">
+                            <option value="">Seleziona</option>
+                            @foreach ($types as $type)
+                                <option value="{{ $type->id }}" @selected(old('type_id', $project->type_id) == $type->id)>{{ $type->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="form-group mb-3">
                         <label for="cover_image">Immagine</label>
                         <input type="file" id="cover_image" name="cover_image"

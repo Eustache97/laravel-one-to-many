@@ -9,6 +9,7 @@
         </div>
         <h2 class="text-center">{{ $project->title }}</h2>
         <h4 class="mt-3">{{ $project->created_at }}</h4>
+        <h5>Tipologia: {{ $project->type ? $project->type->name : 'Nessuna' }}</h5>
         @if ($project->cover_image)
             <div class="w-50 mt-3 mb-3">
                 <img src="{{ asset('storage/' . $project->cover_image) }}" alt="">
