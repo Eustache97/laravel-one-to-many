@@ -9,6 +9,9 @@ use Illuminate\Support\Str;
 class Type extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['name', 'slug'];
+
     public static function generateSlug($title)
     {
         return Str::slug($title, '-');
